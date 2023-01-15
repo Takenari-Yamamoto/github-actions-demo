@@ -27,10 +27,10 @@ jobs:
       - name: Configure docker to use the gcloud cli
         run: gcloud auth configure-docker --quiet
 
-      - run: echo "💡 ないかも---->>> ${{ env.POKEPOKE }} あるかも----->>>  ${{ env.IMAGE }}"
+      # - run: echo "💡 ないかも---->>> ${{ env.POKEPOKE }} あるかも----->>>  ${{ env.IMAGE }} "
 
       - name: Build a docker image
-        run: docker build -t ${{ env.IMAGE }} .
+        run: docker build -t golang-github-actions .
 
       - name: Push the docker image
         run: docker push ${{ env.IMAGE }}
