@@ -27,6 +27,8 @@ jobs:
       - name: Configure docker to use the gcloud cli
         run: gcloud auth configure-docker --quiet
 
+      - run: echo "💡 ${{ env.IMAGE }}"
+
       - name: Build a docker image
         run: docker build -t ${{ env.IMAGE }} .
 
